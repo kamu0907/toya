@@ -44,8 +44,8 @@
   /* Hero */
   .hero{position:relative;min-height:78vh;display:flex;align-items:center;color:#fff;overflow:hidden;}
   .hero-bg{position:absolute;inset:0;background:
-      linear-gradient(180deg,rgba(30,24,20,.55),rgba(30,24,20,.75)),
-      linear-gradient(135deg,#3a3532,#211c19);z-index:0;}
+      linear-gradient(180deg,rgba(30,24,20,.55),rgba(30,24,20,.78)),
+      url("/images/hero-construction.png") center/cover no-repeat;z-index:0;}
   .hero-grid{position:absolute;inset:0;z-index:0;opacity:.12;
     background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
     background-size:48px 48px;}
@@ -69,9 +69,8 @@
   @media(min-width:900px){.about{grid-template-columns:1fr 1fr;}}
   .about h3{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.6;margin-bottom:22px;letter-spacing:.04em;}
   .about p{color:var(--muted);margin-bottom:16px;}
-  .about-visual{background:linear-gradient(135deg,#4a4441,#252019);border-radius:8px;min-height:320px;display:flex;align-items:flex-end;padding:28px;color:#fff;position:relative;overflow:hidden;}
-  .about-visual .grid{position:absolute;inset:0;opacity:.1;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:40px 40px;}
-  .about-visual .cap{position:relative;font-family:var(--serif);font-size:20px;letter-spacing:.08em;}
+  .about-visual{background:linear-gradient(180deg,rgba(30,24,20,.05),rgba(30,24,20,.65)),url("/images/about-team.png") center/cover no-repeat;border-radius:8px;min-height:360px;display:flex;align-items:flex-end;padding:28px;color:#fff;position:relative;overflow:hidden;}
+  .about-visual .cap{position:relative;font-family:var(--serif);font-size:20px;letter-spacing:.08em;text-shadow:0 2px 12px rgba(0,0,0,.5);}
 
   /* Services */
   #services{background:var(--secondary);}
@@ -80,6 +79,7 @@
   .card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:transform .25s,box-shadow .25s;}
   .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(60,40,30,.35);}
   .card-top{height:8px;background:var(--primary);}
+  .card-img{aspect-ratio:16/10;width:100%;object-fit:cover;}
   .card-body{padding:28px;}
   .card .no{font-family:var(--serif);font-size:14px;color:var(--primary);letter-spacing:.1em;}
   .card h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:6px 0 14px;letter-spacing:.06em;}
@@ -180,8 +180,7 @@
           <p>「安全・品質・信頼」を掲げ、経験豊富な職人と最新の技術で、お客様の期待を超える仕事をお約束します。小さな工事から大規模プロジェクトまで、まずはお気軽にご相談ください。</p>
           <p style="color:var(--fg);font-weight:600;margin-top:20px;">東京都知事(般-4)第156540号 / 登録番号 T9010701042967</p>
         </div>
-        <div class="about-visual">
-          <div class="grid" aria-hidden="true"></div>
+        <div class="about-visual" role="img" aria-label="安全装備で現場に立つ戸谷総業のスタッフ">
           <span class="cap">安全 ・ 品質 ・ 信頼</span>
         </div>
       </div>
@@ -199,6 +198,7 @@
       <div class="cards">
         <article class="card">
           <div class="card-top" aria-hidden="true"></div>
+          <img class="card-img" src="/images/service-steel.png" alt="建設現場で組み上げられた鉄骨の構造フレーム" loading="lazy" />
           <div class="card-body">
             <span class="no">01</span>
             <h3>鋼構造物工事業</h3>
@@ -207,6 +207,7 @@
         </article>
         <article class="card">
           <div class="card-top" aria-hidden="true"></div>
+          <img class="card-img" src="/images/service-civil.png" alt="重機が稼働する土木工事の現場" loading="lazy" />
           <div class="card-body">
             <span class="no">02</span>
             <h3>土木工事業</h3>
@@ -215,6 +216,7 @@
         </article>
         <article class="card">
           <div class="card-top" aria-hidden="true"></div>
+          <img class="card-img" src="/images/service-scaffold.png" alt="建物に組まれた足場" loading="lazy" />
           <div class="card-body">
             <span class="no">03</span>
             <h3>とび・土工工事業</h3>
@@ -223,6 +225,7 @@
         </article>
         <article class="card">
           <div class="card-top" aria-hidden="true"></div>
+          <img class="card-img" src="/images/service-demolition.png" alt="重機による建物の解体作業" loading="lazy" />
           <div class="card-body">
             <span class="no">04</span>
             <h3>解体工事業</h3>
