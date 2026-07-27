@@ -121,7 +121,7 @@
   @media(min-width:600px){.row{grid-template-columns:200px 1fr;}}
   .row dt{background:#faf8f5;padding:18px 24px;font-weight:600;font-size:14px;letter-spacing:.06em;border-bottom:1px solid var(--border);}
   @media(min-width:600px){.row dt{border-bottom:none;border-right:1px solid var(--border);}}
-  .row dd{padding:18px 24px;color:var(--muted);font-size:15px;}
+  .row dd{padding:18px 24px;color:var(--muted);font-size:15px;overflow-wrap:anywhere;min-width:0;}
 
   /* Contact */
   .contact-box{background:linear-gradient(135deg,#3a2b28,#221816);color:#fff;border-radius:10px;padding:56px 32px;text-align:center;}
@@ -129,9 +129,10 @@
   .contact-box p{color:#e6d9d6;max-width:520px;margin:0 auto 32px;}
   .contact-methods{display:grid;gap:16px;grid-template-columns:1fr;max-width:640px;margin:0 auto;}
   @media(min-width:640px){.contact-methods{grid-template-columns:1fr 1fr;}}
-  .method{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:22px;}
-  .method .lbl{font-size:12px;letter-spacing:.2em;color:#e9c9c5;}
-  .method .val{font-family:var(--serif);font-size:22px;margin-top:6px;letter-spacing:.04em;}
+  .method{display:block;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:22px;min-width:0;}
+  .method .lbl{display:block;font-size:12px;letter-spacing:.2em;color:#e9c9c5;}
+  .method .val{display:block;font-family:var(--serif);font-size:22px;margin-top:6px;letter-spacing:.04em;overflow-wrap:anywhere;word-break:break-word;}
+  .method .val.email{font-size:16px;letter-spacing:0;}
 
   /* Footer */
   footer{background:#1c1512;color:#c9beb7;padding:56px 0 28px;}
@@ -335,7 +336,7 @@
           </a>
           <a class="method" href="mailto:toyasougyo_20220712@icloud.com">
             <span class="lbl">E-MAIL</span>
-            <span class="val" style="font-size:16px;">toyasougyo_20220712@icloud.com</span>
+            <span class="val email">toyasougyo_20220712@icloud.com</span>
           </a>
         </div>
       </div>
