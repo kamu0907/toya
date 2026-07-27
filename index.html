@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>株式会社戸谷総業 | 鋼構造物・土木・とび土工・解体工事</title>
+<meta name="description" content="株式会社戸谷総業は東京都品川区を拠点に、鋼構造物工事・土木工事・とび土工工事・解体工事を手がける建設会社です。確かな技術で街の未来を支えます。" />
+<style>
+  :root{
+    --bg:#f7f5f2;
+    --fg:#2b2622;
+    --card:#ffffff;
+    --muted:#7a726b;
+    --border:#e6e1db;
+    --primary:#9c2b26;
+    --primary-dark:#7c211d;
+    --secondary:#efeae4;
+    --serif:"Hiragino Mincho ProN","Yu Mincho","YuMincho","MS PMincho",serif;
+    --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;background:var(--bg);}
+  body{font-family:var(--sans);color:var(--fg);background:var(--bg);line-height:1.7;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;text-decoration:none;}
+  img{display:block;max-width:100%;}
+  .container{width:100%;max-width:1120px;margin:0 auto;padding:0 24px;}
+
+  /* Header */
+  header{position:sticky;top:0;z-index:50;background:rgba(247,245,242,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .mark{width:38px;height:38px;border-radius:50%;background:var(--primary);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:18px;}
+  .brand-name{font-family:var(--serif);font-size:20px;font-weight:600;letter-spacing:.08em;}
+  .brand-sub{font-size:11px;color:var(--muted);letter-spacing:.18em;}
+  nav.links{display:none;gap:28px;font-size:14px;letter-spacing:.06em;}
+  nav.links a{color:var(--muted);transition:color .2s;}
+  nav.links a:hover{color:var(--primary);}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--primary);color:#fff;padding:12px 22px;border-radius:4px;font-size:14px;letter-spacing:.06em;transition:background .2s;}
+  .btn:hover{background:var(--primary-dark);}
+  .btn.ghost{background:transparent;color:var(--primary);border:1px solid var(--primary);}
+  .btn.ghost:hover{background:var(--primary);color:#fff;}
+  @media(min-width:900px){nav.links{display:flex;}}
+
+  /* Hero */
+  .hero{position:relative;min-height:78vh;display:flex;align-items:center;color:#fff;overflow:hidden;}
+  .hero-bg{position:absolute;inset:0;background:
+      linear-gradient(180deg,rgba(30,24,20,.55),rgba(30,24,20,.75)),
+      linear-gradient(135deg,#3a3532,#211c19);z-index:0;}
+  .hero-grid{position:absolute;inset:0;z-index:0;opacity:.12;
+    background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);
+    background-size:48px 48px;}
+  .hero .container{position:relative;z-index:1;padding-top:60px;padding-bottom:60px;}
+  .eyebrow{display:inline-block;font-size:13px;letter-spacing:.28em;color:#e9c9c5;border-left:3px solid var(--primary);padding-left:12px;margin-bottom:24px;}
+  .hero h1{font-family:var(--serif);font-size:clamp(32px,6vw,60px);font-weight:600;line-height:1.35;letter-spacing:.04em;text-wrap:balance;}
+  .hero p{margin-top:24px;max-width:540px;font-size:16px;color:#e8e2dc;}
+  .hero-actions{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px;}
+
+  /* Section */
+  section{padding:88px 0;}
+  .sec-head{text-align:center;margin-bottom:56px;}
+  .sec-head .en{display:block;font-size:12px;letter-spacing:.32em;color:var(--primary);margin-bottom:12px;text-transform:uppercase;}
+  .sec-head h2{font-family:var(--serif);font-size:clamp(26px,4vw,36px);font-weight:600;letter-spacing:.06em;}
+  .rule{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:18px;}
+  .rule span{height:1px;width:48px;background:var(--primary);}
+  .rule i{width:7px;height:7px;background:var(--primary);transform:rotate(45deg);}
+
+  /* About */
+  .about{display:grid;gap:48px;align-items:center;}
+  @media(min-width:900px){.about{grid-template-columns:1fr 1fr;}}
+  .about h3{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.6;margin-bottom:22px;letter-spacing:.04em;}
+  .about p{color:var(--muted);margin-bottom:16px;}
+  .about-visual{background:linear-gradient(135deg,#4a4441,#252019);border-radius:8px;min-height:320px;display:flex;align-items:flex-end;padding:28px;color:#fff;position:relative;overflow:hidden;}
+  .about-visual .grid{position:absolute;inset:0;opacity:.1;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:40px 40px;}
+  .about-visual .cap{position:relative;font-family:var(--serif);font-size:20px;letter-spacing:.08em;}
+
+  /* Services */
+  #services{background:var(--secondary);}
+  .cards{display:grid;gap:24px;grid-template-columns:1fr;}
+  @media(min-width:640px){.cards{grid-template-columns:1fr 1fr;}}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:transform .25s,box-shadow .25s;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -20px rgba(60,40,30,.35);}
+  .card-top{height:8px;background:var(--primary);}
+  .card-body{padding:28px;}
+  .card .no{font-family:var(--serif);font-size:14px;color:var(--primary);letter-spacing:.1em;}
+  .card h3{font-family:var(--serif);font-size:22px;font-weight:600;margin:6px 0 14px;letter-spacing:.06em;}
+  .card p{color:var(--muted);font-size:15px;}
+
+  /* Strengths */
+  .str{display:grid;gap:24px;grid-template-columns:1fr;}
+  @media(min-width:768px){.str{grid-template-columns:repeat(3,1fr);}}
+  .str-item{text-align:center;padding:36px 24px;border:1px solid var(--border);border-radius:8px;background:var(--card);}
+  .str-item .icon{width:56px;height:56px;border-radius:50%;background:var(--secondary);color:var(--primary);display:grid;place-items:center;margin:0 auto 20px;font-family:var(--serif);font-size:24px;font-weight:700;}
+  .str-item h3{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:12px;letter-spacing:.04em;}
+  .str-item p{color:var(--muted);font-size:15px;}
+
+  /* Company table */
+  #company{background:var(--secondary);}
+  .table{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;max-width:760px;margin:0 auto;}
+  .row{display:grid;grid-template-columns:1fr;border-bottom:1px solid var(--border);}
+  .row:last-child{border-bottom:none;}
+  @media(min-width:600px){.row{grid-template-columns:200px 1fr;}}
+  .row dt{background:#faf8f5;padding:18px 24px;font-weight:600;font-size:14px;letter-spacing:.06em;border-bottom:1px solid var(--border);}
+  @media(min-width:600px){.row dt{border-bottom:none;border-right:1px solid var(--border);}}
+  .row dd{padding:18px 24px;color:var(--muted);font-size:15px;}
+
+  /* Contact */
+  .contact-box{background:linear-gradient(135deg,#3a2b28,#221816);color:#fff;border-radius:10px;padding:56px 32px;text-align:center;}
+  .contact-box h2{font-family:var(--serif);font-size:clamp(24px,4vw,34px);font-weight:600;letter-spacing:.06em;margin-bottom:16px;}
+  .contact-box p{color:#e6d9d6;max-width:520px;margin:0 auto 32px;}
+  .contact-methods{display:grid;gap:16px;grid-template-columns:1fr;max-width:640px;margin:0 auto;}
+  @media(min-width:640px){.contact-methods{grid-template-columns:1fr 1fr;}}
+  .method{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:8px;padding:22px;}
+  .method .lbl{font-size:12px;letter-spacing:.2em;color:#e9c9c5;}
+  .method .val{font-family:var(--serif);font-size:22px;margin-top:6px;letter-spacing:.04em;}
+
+  /* Footer */
+  footer{background:#1c1512;color:#c9beb7;padding:56px 0 28px;}
+  .foot-grid{display:grid;gap:32px;grid-template-columns:1fr;}
+  @media(min-width:768px){.foot-grid{grid-template-columns:2fr 1fr 1fr;}}
+  footer .brand-name{color:#fff;}
+  footer h4{color:#fff;font-size:14px;letter-spacing:.12em;margin-bottom:16px;}
+  footer a{color:#c9beb7;font-size:14px;line-height:2.1;transition:color .2s;}
+  footer a:hover{color:#fff;}
+  .copy{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:22px;font-size:12px;color:#8c817a;letter-spacing:.08em;text-align:center;}
+  .skip{position:absolute;left:-9999px;}
+  .skip:focus{left:16px;top:16px;background:#fff;color:var(--primary);padding:10px 16px;border-radius:4px;z-index:100;}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">本文へスキップ</a>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="株式会社戸谷総業 トップへ">
+      <span class="mark" aria-hidden="true">戸</span>
+      <span>
+        <span class="brand-name">株式会社戸谷総業</span><br />
+        <span class="brand-sub">TOYA SOUGYO CO., LTD.</span>
+      </span>
+    </a>
+    <nav class="links" aria-label="メインナビゲーション">
+      <a href="#about">会社概要</a>
+      <a href="#services">事業内容</a>
+      <a href="#strengths">選ばれる理由</a>
+      <a href="#company">会社情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+    <a class="btn" href="#contact">お問い合わせ</a>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero" id="top" style="padding:0;">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="container">
+      <span class="eyebrow">確かな技術で、街をつくる</span>
+      <h1>確かな技術で、<br />街の未来を支える。</h1>
+      <p>鋼構造物から土木、とび土工、解体まで。株式会社戸谷総業は、一つひとつの現場に真摯に向き合い、安全と品質を第一に社会の基盤づくりを担います。</p>
+      <div class="hero-actions">
+        <a class="btn" href="#services">事業内容を見る</a>
+        <a class="btn ghost" href="#contact" style="color:#fff;border-color:rgba(255,255,255,.5);">お問い合わせ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="sec-head">
+        <span class="en">About Us</span>
+        <h2>会社概要</h2>
+        <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
+      </div>
+      <div class="about">
+        <div>
+          <h3>現場の一つひとつに、<br />誠実に向き合う。</h3>
+          <p>株式会社戸谷総業は、東京都品川区を拠点に建設事業を展開しています。鋼構造物工事をはじめとする多様な工事に対応し、確かな施工で地域社会に貢献してまいりました。</p>
+          <p>「安全・品質・信頼」を掲げ、経験豊富な職人と最新の技術で、お客様の期待を超える仕事をお約束します。小さな工事から大規模プロジェクトまで、まずはお気軽にご相談ください。</p>
+          <p style="color:var(--fg);font-weight:600;margin-top:20px;">東京都知事(般-4)第156540号 / 登録番号 T9010701042967</p>
+        </div>
+        <div class="about-visual">
+          <div class="grid" aria-hidden="true"></div>
+          <span class="cap">安全 ・ 品質 ・ 信頼</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="sec-head">
+        <span class="en">Our Business</span>
+        <h2>主な事業内容</h2>
+        <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="card-top" aria-hidden="true"></div>
+          <div class="card-body">
+            <span class="no">01</span>
+            <h3>鋼構造物工事業</h3>
+            <p>鉄骨の製作・建方から取付まで、建物の骨格となる鋼構造物を高い精度で施工します。ビルや工場など、強固で安全な構造物づくりを支えます。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top" aria-hidden="true"></div>
+          <div class="card-body">
+            <span class="no">02</span>
+            <h3>土木工事業</h3>
+            <p>道路・造成・基礎工事など、社会インフラの整備を担います。地盤から丁寧に手がけ、暮らしを足元から支える確かな施工を行います。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top" aria-hidden="true"></div>
+          <div class="card-body">
+            <span class="no">03</span>
+            <h3>とび・土工工事業</h3>
+            <p>足場の組立・解体、鉄骨建方、重量物の運搬据付など、現場の安全を左右する重要な工程を熟練の技術で確実に遂行します。</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-top" aria-hidden="true"></div>
+          <div class="card-body">
+            <span class="no">04</span>
+            <h3>解体工事業</h3>
+            <p>建物の解体を、周辺環境や安全に最大限配慮しながら実施します。適切な分別と処理で、次の街づくりへとつなげます。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Strengths -->
+  <section id="strengths">
+    <div class="container">
+      <div class="sec-head">
+        <span class="en">Our Strengths</span>
+        <h2>選ばれる理由</h2>
+        <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
+      </div>
+      <div class="str">
+        <div class="str-item">
+          <div class="icon" aria-hidden="true">安</div>
+          <h3>徹底した安全管理</h3>
+          <p>すべての現場で安全を最優先。日々の点検と教育を徹底し、無事故・無災害を追求します。</p>
+        </div>
+        <div class="str-item">
+          <div class="icon" aria-hidden="true">技</div>
+          <h3>確かな技術力</h3>
+          <p>鋼構造物から解体まで幅広く対応。熟練の職人が高品質な施工をお届けします。</p>
+        </div>
+        <div class="str-item">
+          <div class="icon" aria-hidden="true">応</div>
+          <h3>柔軟な対応力</h3>
+          <p>小規模工事から大型案件まで。ご要望に合わせた最適なご提案とスピーディな対応。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company -->
+  <section id="company">
+    <div class="container">
+      <div class="sec-head">
+        <span class="en">Company</span>
+        <h2>会社情報</h2>
+        <div class="rule" aria-hidden="true"><span></span><i></i><span></span></div>
+      </div>
+      <dl class="table">
+        <div class="row"><dt>会社名</dt><dd>株式会社戸谷総業</dd></div>
+        <div class="row"><dt>代表取締役</dt><dd>戸谷 亮（とや りょう）</dd></div>
+        <div class="row"><dt>所在地</dt><dd>〒140-0004 東京都品川区南品川 1-7-7</dd></div>
+        <div class="row"><dt>電話番号</dt><dd>03-6684-4401</dd></div>
+        <div class="row"><dt>FAX</dt><dd>03-6684-4401</dd></div>
+        <div class="row"><dt>携帯</dt><dd>090-1035-0902</dd></div>
+        <div class="row"><dt>メール</dt><dd>toyasougyo_20220712@icloud.com</dd></div>
+        <div class="row"><dt>建設業許可</dt><dd>東京都知事(般-4)第156540号</dd></div>
+        <div class="row"><dt>登録番号</dt><dd>T9010701042967</dd></div>
+        <div class="row"><dt>事業内容</dt><dd>鋼構造物工事業／土木工事業／とび・土工工事業／解体工事業</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <h2>お問い合わせ</h2>
+        <p>工事のご依頼・ご相談、お見積りなど、お気軽にお問い合わせください。担当者より丁寧にご対応いたします。</p>
+        <div class="contact-methods">
+          <a class="method" href="tel:0366844401">
+            <span class="lbl">TEL</span>
+            <span class="val">03-6684-4401</span>
+          </a>
+          <a class="method" href="mailto:toyasougyo_20220712@icloud.com">
+            <span class="lbl">E-MAIL</span>
+            <span class="val" style="font-size:16px;">toyasougyo_20220712@icloud.com</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">
+          <span class="mark" aria-hidden="true">戸</span>
+          <span class="brand-name">株式会社戸谷総業</span>
+        </div>
+        <p style="margin-top:16px;font-size:14px;max-width:320px;">確かな技術で、街の未来を支える建設会社。東京都品川区を拠点に、鋼構造物・土木・とび土工・解体工事を手がけています。</p>
+      </div>
+      <div>
+        <h4>事業内容</h4>
+        <a href="#services">鋼構造物工事業</a><br />
+        <a href="#services">土木工事業</a><br />
+        <a href="#services">とび・土工工事業</a><br />
+        <a href="#services">解体工事業</a>
+      </div>
+      <div>
+        <h4>お問い合わせ</h4>
+        <a href="tel:0366844401">TEL 03-6684-4401</a><br />
+        <a href="mailto:toyasougyo_20220712@icloud.com">メールで問い合わせ</a><br />
+        <span style="font-size:14px;">〒140-0004<br />東京都品川区南品川 1-7-7</span>
+      </div>
+    </div>
+    <div class="copy">© 2026 株式会社戸谷総業 TOYA SOUGYO CO., LTD. All Rights Reserved.</div>
+  </div>
+</footer>
+</body>
+</html>
