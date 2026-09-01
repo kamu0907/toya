@@ -289,46 +289,77 @@ img{max-width:100%}
   color:var(--gold);
 }
 
-/* CONTACT */
-.contact{
+
+.strengths-block{
+  margin-top:70px;
+}
+.strengths-block>h3{
+  margin:0 0 24px;
   text-align:center;
-  background:var(--paper);
+  font:600 30px "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
 }
-.contact h2{
-  margin:18px 0 14px;
-  font:600 clamp(38px,5vw,64px)/1.3 "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
+.strengths-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  border:1px solid #ffffff66;
 }
-.contact em{
-  color:var(--gold);
-  font-style:normal;
-}
-.contact-links{
-  margin-top:28px;
+.strength-item{
+  min-height:116px;
+  padding:24px 28px;
   display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-}
-.contact-link{
-  display:inline-flex;
   align-items:center;
-  justify-content:center;
-  min-width:240px;
-  padding:16px 20px;
-  border:1px solid var(--navy);
-  background:#fff;
-  color:var(--navy);
-  font-size:13px;
+  gap:20px;
+  border-bottom:1px dashed #ffffff44;
+}
+.strength-item:nth-child(odd){border-right:1px dashed #ffffff44}
+.strength-item:nth-last-child(-n+2){border-bottom:0}
+.strength-no{
+  flex:0 0 42px;
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  font-size:12px;
   font-weight:700;
 }
-.contact-link.primary{
-  background:var(--gold);
-  border-color:var(--gold);
+.strength-item p{
+  margin:0;
+  color:#fff;
+  font:600 16px/1.8 "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
 }
-.social-note{
-  margin-top:18px;
-  color:#65758a;
-  font-size:12px;
+
+/* CONTACT */
+.contact{
+  background:var(--paper);
+  text-align:left;
+}
+.contact-heading{
+  margin-bottom:38px;
+}
+.contact-info{
+  max-width:760px;
+  margin:0 auto;
+  border-top:1px solid var(--line);
+}
+.contact-row{
+  display:grid;
+  grid-template-columns:150px 1fr;
+  gap:24px;
+  padding:20px 0;
+  border-bottom:1px solid var(--line);
+  align-items:center;
+}
+.contact-row>span{
+  color:var(--navy);
+  font-weight:700;
+}
+.contact-row a{
+  overflow-wrap:anywhere;
+}
+.contact-social div{
+  color:#53657a;
 }
 
 /* FOOTER */
@@ -403,11 +434,10 @@ img{max-width:100%}
     gap:10px;
   }
   .history strong{width:125px}
-  .contact-links{
-    flex-direction:column;
-    align-items:center;
-  }
-  .contact-link{width:min(100%,360px)}
+  .strengths-grid{grid-template-columns:1fr}
+  .strength-item:nth-child(odd){border-right:0}
+  .strength-item:nth-last-child(2){border-bottom:1px dashed #ffffff44}
+  .contact-row{grid-template-columns:1fr;gap:6px}
   .footer{
     display:block;
     padding:35px 7vw;
@@ -612,10 +642,6 @@ img{max-width:100%}
       </p>
       <strong>STRONG STRUCTURES.<br>BUILDING THE FUTURE.</strong>
 
-      <div class="about-facts">
-        <span>年間大型現場5〜6件を施工</span>
-        <span>無事故・無災害を徹底した作業</span>
-      </div>
     </div>
   </div>
 
@@ -626,19 +652,40 @@ img{max-width:100%}
     <p><strong>2022年 7月</strong> 株式会社 戸谷総業設立</p>
     <p><strong>2024年 2月</strong> 東京都建設業許可証取得</p>
   </div>
+
+  <div class="strengths-block">
+    <h3>私たちの強み</h3>
+    <div class="strengths-grid">
+      <div class="strength-item"><span class="strength-no">01</span><p>工程を遵守し、<br>確実な施工を実現</p></div>
+      <div class="strength-item"><span class="strength-no">02</span><p>年間大型現場5〜6件を施工</p></div>
+      <div class="strength-item"><span class="strength-no">03</span><p>チームワークのよさで<br>効率と高い品質を提供</p></div>
+      <div class="strength-item"><span class="strength-no">04</span><p>総作業員約40名体制で対応</p></div>
+      <div class="strength-item"><span class="strength-no">05</span><p>無事故・無災害を徹底した作業</p></div>
+      <div class="strength-item"><span class="strength-no">06</span><p>首都圏全域に対応可能</p></div>
+    </div>
+  </div>
 </section>
 
 <section id="contact" class="section contact">
-  <div class="eyebrow">CONTACT</div>
-  <h2>現場の品質を、<br><em>ともにつくる。</em></h2>
-  <p>工事のご相談、お見積もりを承ります。</p>
-
-  <div class="contact-links">
-    <a class="contact-link primary" href="tel:03-6684-4401">TEL / FAX　03-6684-4401</a>
-    <a class="contact-link" href="mailto:toyasougyo_20220712@outlook.jp">E-mail</a>
+  <div class="heading contact-heading">
+    <b>CONTACT</b>
+    <h2>お問い合わせ</h2>
   </div>
 
-  <p class="social-note">LINE・Instagramでも情報を発信しています。</p>
+  <div class="contact-info">
+    <div class="contact-row">
+      <span>TEL / FAX</span>
+      <a href="tel:03-6684-4401">03-6684-4401</a>
+    </div>
+    <div class="contact-row">
+      <span>E-mail</span>
+      <a href="mailto:toyasougyo_20220712@outlook.jp">toyasougyo_20220712@outlook.jp</a>
+    </div>
+    <div class="contact-row contact-social">
+      <span>SNS</span>
+      <div>LINE　／　Instagram</div>
+    </div>
+  </div>
 </section>
 
 <footer class="footer">
