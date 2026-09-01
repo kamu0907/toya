@@ -11,7 +11,7 @@
 
 <style>
 :root{
-  --navy:#07132f;
+  --navy:#183a61;
   --gold:#d7a55d;
   --ink:#152d4d;
   --line:#d7dce3;
@@ -361,10 +361,32 @@ img{max-width:100%}
 .contact-social div{
   color:#53657a;
 }
+.sns-qr-list{
+  display:flex;
+  gap:36px;
+  align-items:flex-start;
+}
+.sns-qr-item{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+}
+.sns-qr-item img{
+  display:block;
+  width:112px;
+  height:112px;
+  object-fit:contain;
+  background:#fff;
+}
+.sns-qr-item strong{
+  color:var(--navy);
+  font-size:12px;
+}
 
 /* FOOTER */
 .footer{
-  background:#040b20;
+  background:#102d4e;
   color:#fff;
   padding:45px 8vw;
   display:flex;
@@ -438,6 +460,8 @@ img{max-width:100%}
   .strength-item:nth-child(odd){border-right:0}
   .strength-item:nth-last-child(2){border-bottom:1px dashed #ffffff44}
   .contact-row{grid-template-columns:1fr;gap:6px}
+  .sns-qr-list{gap:24px}
+  .sns-qr-item img{width:100px;height:100px}
   .footer{
     display:block;
     padding:35px 7vw;
@@ -483,7 +507,7 @@ img{max-width:100%}
     <h2>事業内容</h2>
   </div>
 
-  <p class="intro">コンクリート打設を支える、見えない構造の専門家。</p>
+  
 
   <div class="service">
     <div class="service-card">
@@ -560,7 +584,7 @@ img{max-width:100%}
     <h2>施工実績</h2>
   </div>
 
-  <p class="intro">信頼と実績が、次の現場へつながっていく。</p>
+  
 
   <div class="work">
     <strong>2009年</strong>
@@ -683,7 +707,16 @@ img{max-width:100%}
     </div>
     <div class="contact-row contact-social">
       <span>SNS</span>
-      <div>LINE　／　Instagram</div>
+      <div class="sns-qr-list">
+        <div class="sns-qr-item">
+          <img src="line-qr.png" alt="LINE QRコード">
+          <strong>LINE</strong>
+        </div>
+        <div class="sns-qr-item">
+          <img src="instagram-qr.png" alt="Instagram QRコード">
+          <strong>Instagram</strong>
+        </div>
+      </div>
     </div>
   </div>
 </section>
