@@ -135,6 +135,18 @@ img{max-width:100%}
   padding:30px 0;
   border-bottom:1px solid var(--line);
 }
+.service-card{
+  display:grid;
+  grid-template-columns:minmax(300px, 1fr) minmax(0, 1fr);
+  gap:38px;
+  align-items:center;
+}
+.service-photo{
+  display:block;
+  width:100%;
+  aspect-ratio:1.55/1;
+  object-fit:cover;
+}
 .service-inner{
   display:grid;
   grid-template-columns:84px 1fr;
@@ -183,6 +195,18 @@ img{max-width:100%}
   color:#65758a;
   font-size:13px;
 }
+.works-gallery{
+  margin-top:42px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.works-gallery img{
+  display:block;
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+}
 
 /* ABOUT */
 .about{
@@ -217,6 +241,13 @@ img{max-width:100%}
   display:flex;
   flex-direction:column;
   justify-content:center;
+}
+.about-photo{
+  display:block;
+  width:100%;
+  aspect-ratio:1.15/1;
+  object-fit:cover;
+  margin-bottom:28px;
 }
 .panel h3{
   margin:12px 0 18px;
@@ -338,6 +369,10 @@ img{max-width:100%}
   }
   .heading b{font-size:42px}
   .heading h2{font-size:19px}
+  .service-card{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
   .service-inner{
     grid-template-columns:60px 1fr;
     gap:15px;
@@ -363,6 +398,10 @@ img{max-width:100%}
     font-size:13px;
   }
   .work small{grid-column:2}
+  .works-gallery{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
   .history strong{width:125px}
   .contact-links{
     flex-direction:column;
@@ -376,6 +415,7 @@ img{max-width:100%}
 }
 
 @media(max-width:520px){
+  .works-gallery{grid-template-columns:1fr}
   .site-brand img{
     width:190px;
     max-width:52vw;
@@ -416,57 +456,69 @@ img{max-width:100%}
   <p class="intro">コンクリート打設を支える、見えない構造の専門家。</p>
 
   <div class="service">
-    <div class="service-inner">
-      <span class="number">01</span>
-      <div>
-        <h3>ラス型枠工事</h3>
+    <div class="service-card">
+      <img class="service-photo" src="business_01_lath_formwork.jpg" alt="ラス型枠工事の施工風景">
+      <div class="service-inner">
+        <span class="number">01</span>
+        <div>
+          <h3>ラス型枠工事</h3>
         <p>
           特殊な金網（ラス材）を鉄筋の隙間に設置し、コンクリート打継部を形成します。
           メッキ製・ステンレス製など、現場条件に応じた材料を使用し、確実な施工を行います。
         </p>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="service">
-    <div class="service-inner">
-      <span class="number">02</span>
-      <div>
-        <h3>コンクリート打継ぎ工事</h3>
+    <div class="service-card">
+      <img class="service-photo" src="business_02_air_fence.jpg" alt="エアーフェンス工法の施工風景">
+      <div class="service-inner">
+        <span class="number">02</span>
+        <div>
+          <h3>コンクリート打継ぎ工事</h3>
         <small>エアーフェンス工法</small>
         <p>
           ゴム製のエアーフェンスを鉄筋の隙間に設置し、空気で膨らませコンクリートを止めます。
           打設後にエアーフェンスを引き抜くため、コンクリートの中に残りません。
           緊急打設や打ち継ぎ変更にも対応可能です。
         </p>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="service">
-    <div class="service-inner">
-      <span class="number">03</span>
-      <div>
-        <h3>コンクリート打継ぎ工事</h3>
+    <div class="service-card">
+      <img class="service-photo" src="business_03_lath_method.jpg" alt="ラス材工法の施工風景">
+      <div class="service-inner">
+        <span class="number">03</span>
+        <div>
+          <h3>コンクリート打継ぎ工事</h3>
         <small>ラス材工法</small>
         <p>
           ラス材（メッキ製、ステンレス製等）の金網を使用し、鉄筋の隙間に入れて、
           型に加工しながらコンクリートを止めます。
           コンクリート打設後、ラス材はそのまま埋め込まれます。
         </p>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="service">
-    <div class="service-inner">
-      <span class="number">04</span>
-      <div>
-        <h3>鍛冶工事</h3>
+    <div class="service-card">
+      <img class="service-photo" src="business_04_blacksmith.jpg" alt="鍛冶工事の施工風景">
+      <div class="service-inner">
+        <span class="number">04</span>
+        <div>
+          <h3>鍛冶工事</h3>
         <p>
           鉄筋・金物などの加工、溶接、切断、組立などを行います。
           現場や用途に応じた高精度な加工を提供し、建築現場を支えます。
         </p>
+        </div>
       </div>
     </div>
   </div>
@@ -521,6 +573,15 @@ img{max-width:100%}
     <span>横須賀武山教育施設整備工事</span>
     <small>株式会社 五洋建設</small>
   </div>
+
+  <div class="works-gallery" aria-label="施工実績写真">
+    <img src="works_01.jpg" alt="施工実績写真1">
+    <img src="works_02.jpg" alt="施工実績写真2">
+    <img src="works_03.jpg" alt="施工実績写真3">
+    <img src="works_04.jpg" alt="施工実績写真4">
+    <img src="works_05.jpg" alt="施工実績写真5">
+    <img src="works_06.jpg" alt="施工実績写真6">
+  </div>
 </section>
 
 <section id="about" class="about">
@@ -542,6 +603,7 @@ img{max-width:100%}
     </dl>
 
     <div class="panel">
+      <img class="about-photo" src="about_team.jpg" alt="戸谷総業の現場スタッフ">
       <div class="eyebrow">TOYA SOUGYO</div>
       <h3>品質・安全・信頼。</h3>
       <p>
