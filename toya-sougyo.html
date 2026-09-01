@@ -11,9 +11,9 @@
 
 <style>
 :root{
-  --navy:#183a61;
+  --navy:#315d82;
   --gold:#d7a55d;
-  --ink:#152d4d;
+  --ink:#274968;
   --line:#d7dce3;
   --paper:#f7f8fa;
 }
@@ -524,6 +524,62 @@ img{max-width:100%}
   .sns-qr-item img{width:125px;height:125px}
   .header-color-checker{right:8px;bottom:8px}
   .header-color-checker button{padding:7px 9px}
+}
+
+
+/* CONTACT SNS alignment fix */
+.contact-row.contact-social{
+  align-items:start;
+}
+.contact-row.contact-social > span{
+  padding-top:10px;
+}
+.sns-qr-list{
+  display:grid;
+  grid-template-columns:140px 140px;
+  gap:28px;
+  align-items:start;
+  justify-content:start;
+}
+.sns-qr-item{
+  width:140px;
+  display:grid;
+  grid-template-rows:140px auto;
+  justify-items:center;
+  align-items:start;
+  gap:9px;
+}
+.sns-qr-item img{
+  display:block;
+  width:140px;
+  height:140px;
+  padding:0;
+  margin:0;
+  object-fit:contain;
+  object-position:center;
+  background:#fff;
+}
+.sns-qr-item strong{
+  display:block;
+  width:100%;
+  margin:0;
+  text-align:center;
+  line-height:1.4;
+}
+@media(max-width:720px){
+  .contact-row.contact-social > span{padding-top:0}
+  .sns-qr-list{
+    grid-template-columns:120px 120px;
+    gap:20px;
+  }
+  .sns-qr-item{
+    width:120px;
+    grid-template-rows:120px auto;
+  }
+  .sns-qr-item img{
+    width:120px;
+    height:120px;
+  }
 }
 
 </style>
