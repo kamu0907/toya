@@ -22,6 +22,7 @@ html{scroll-behavior:smooth}
 body{
   margin:0;
   color:var(--ink);
+  background:#fff;
   font-family:"Yu Gothic","YuGothic","Hiragino Kaku Gothic ProN","Meiryo",sans-serif;
 }
 a{color:inherit;text-decoration:none}
@@ -86,21 +87,6 @@ img{max-width:100%}
 }
 
 /* COMMON */
-.button{
-  display:inline-block;
-  background:var(--gold);
-  color:var(--navy);
-  padding:17px 25px;
-  margin-top:22px;
-  font-size:12px;
-  letter-spacing:.1em;
-}
-.eyebrow{
-  color:var(--gold);
-  font-size:11px;
-  letter-spacing:.25em;
-  font-weight:700;
-}
 .section{
   max-width:1160px;
   margin:auto;
@@ -110,29 +96,46 @@ img{max-width:100%}
   display:flex;
   align-items:baseline;
   gap:25px;
-  border-bottom:1px solid var(--ink);
+  border-bottom:2px solid var(--ink);
   padding-bottom:16px;
 }
 .heading b{
   font-size:clamp(42px,6vw,76px);
   color:var(--navy);
   letter-spacing:-.05em;
+  line-height:1;
 }
 .heading h2{
-  font:500 26px "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
   margin:0;
+  font:600 26px "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
 }
 .intro{
-  font:20px "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
   margin:22px 0 45px;
+  font:20px/1.8 "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
+}
+.eyebrow{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:.25em;
+  font-weight:700;
+}
+.button{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--navy);
+  padding:17px 25px;
+  margin-top:22px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.1em;
 }
 
 /* BUSINESS */
 .service{
-  padding:28px 0;
+  padding:30px 0;
   border-bottom:1px solid var(--line);
 }
-.service>div{
+.service-inner{
   display:grid;
   grid-template-columns:84px 1fr;
   gap:25px;
@@ -148,15 +151,18 @@ img{max-width:100%}
   font-weight:700;
 }
 .service h3{
-  font:500 25px "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
   margin:0 0 8px;
+  font:600 25px/1.5 "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
 }
 .service small{
+  display:block;
+  margin-bottom:10px;
   color:var(--gold);
   font-weight:700;
 }
 .service p{
-  line-height:1.9;
+  margin:0;
+  line-height:2;
   color:#53657a;
   font-size:14px;
 }
@@ -169,13 +175,19 @@ img{max-width:100%}
   padding:19px 0;
   border-bottom:1px solid var(--line);
 }
-.work small{color:#65758a}
+.work strong{
+  color:var(--navy);
+  font-size:15px;
+}
+.work small{
+  color:#65758a;
+  font-size:13px;
+}
 
 /* ABOUT */
 .about{
   background:var(--navy);
   color:#fff;
-  max-width:none;
   padding:100px max(7vw, calc((100% - 1060px)/2));
 }
 .about .heading{border-color:#ffffff66}
@@ -187,13 +199,17 @@ img{max-width:100%}
   gap:65px;
   margin-top:45px;
 }
+.info{margin:0}
 .info div{
   display:grid;
   grid-template-columns:140px 1fr;
   padding:17px 0;
   border-bottom:1px solid #ffffff4d;
 }
-.info dt{color:var(--gold)}
+.info dt{
+  color:var(--gold);
+  font-weight:700;
+}
 .info dd{margin:0}
 .panel{
   border:1px solid #ffffff66;
@@ -203,9 +219,11 @@ img{max-width:100%}
   justify-content:center;
 }
 .panel h3{
-  font:500 38px "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
+  margin:12px 0 18px;
+  font:600 38px "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
 }
 .panel p{
+  margin:0 0 20px;
   line-height:2;
   color:#d9e1ec;
 }
@@ -213,9 +231,24 @@ img{max-width:100%}
   color:var(--gold);
   font-size:12px;
   letter-spacing:.13em;
+  line-height:1.8;
+}
+.about-facts{
+  margin-top:25px;
+  padding-top:20px;
+  border-top:1px solid #ffffff33;
+  display:grid;
+  gap:8px;
+  color:#d9e1ec;
+  font-size:13px;
 }
 .history{margin-top:65px}
+.history h3{
+  margin:0 0 12px;
+  font:600 28px "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
+}
 .history p{
+  margin:0;
   padding:15px 0;
   border-bottom:1px dashed #ffffff55;
 }
@@ -231,11 +264,40 @@ img{max-width:100%}
   background:var(--paper);
 }
 .contact h2{
-  font:500 clamp(38px,5vw,64px)/1.3 "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
+  margin:18px 0 14px;
+  font:600 clamp(38px,5vw,64px)/1.3 "Yu Mincho","YuMincho","Hiragino Mincho ProN",serif;
 }
 .contact em{
   color:var(--gold);
   font-style:normal;
+}
+.contact-links{
+  margin-top:28px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+}
+.contact-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:240px;
+  padding:16px 20px;
+  border:1px solid var(--navy);
+  background:#fff;
+  color:var(--navy);
+  font-size:13px;
+  font-weight:700;
+}
+.contact-link.primary{
+  background:var(--gold);
+  border-color:var(--gold);
+}
+.social-note{
+  margin-top:18px;
+  color:#65758a;
+  font-size:12px;
 }
 
 /* FOOTER */
@@ -247,6 +309,7 @@ img{max-width:100%}
   justify-content:space-between;
   gap:20px;
   font-size:12px;
+  line-height:1.8;
 }
 .footer small{color:#8995a8}
 
@@ -275,7 +338,7 @@ img{max-width:100%}
   }
   .heading b{font-size:42px}
   .heading h2{font-size:19px}
-  .service>div{
+  .service-inner{
     grid-template-columns:60px 1fr;
     gap:15px;
   }
@@ -289,18 +352,23 @@ img{max-width:100%}
     grid-template-columns:1fr;
     gap:0;
   }
+  .panel{
+    padding:32px 24px;
+    margin-top:25px;
+  }
+  .panel h3{font-size:29px}
   .work{
     grid-template-columns:70px 1fr;
     gap:5px 12px;
     font-size:13px;
   }
   .work small{grid-column:2}
-  .panel{
-    padding:32px 24px;
-    margin-top:25px;
-  }
-  .panel h3{font-size:29px}
   .history strong{width:125px}
+  .contact-links{
+    flex-direction:column;
+    align-items:center;
+  }
+  .contact-link{width:min(100%,360px)}
   .footer{
     display:block;
     padding:35px 7vw;
@@ -332,7 +400,7 @@ img{max-width:100%}
     <a href="#about">会社概要</a>
   </nav>
 
-  <a class="header-contact" href="tel:03-6684-4401">お問い合わせ</a>
+  <a class="header-contact" href="#contact">お問い合わせ</a>
 </header>
 
 <section class="hero-image-only">
@@ -348,43 +416,57 @@ img{max-width:100%}
   <p class="intro">コンクリート打設を支える、見えない構造の専門家。</p>
 
   <div class="service">
-    <div>
+    <div class="service-inner">
       <span class="number">01</span>
       <div>
         <h3>ラス型枠工事</h3>
-        <p>特殊な金網（ラス材）を鉄筋の隙間に設置し、コンクリート打継部を形成します。</p>
+        <p>
+          特殊な金網（ラス材）を鉄筋の隙間に設置し、コンクリート打継部を形成します。
+          メッキ製・ステンレス製など、現場条件に応じた材料を使用し、確実な施工を行います。
+        </p>
       </div>
     </div>
   </div>
 
   <div class="service">
-    <div>
+    <div class="service-inner">
       <span class="number">02</span>
       <div>
         <h3>コンクリート打継ぎ工事</h3>
         <small>エアーフェンス工法</small>
-        <p>ゴム製のエアーフェンスでコンクリートを止め、打設後に引き抜きます。</p>
+        <p>
+          ゴム製のエアーフェンスを鉄筋の隙間に設置し、空気で膨らませコンクリートを止めます。
+          打設後にエアーフェンスを引き抜くため、コンクリートの中に残りません。
+          緊急打設や打ち継ぎ変更にも対応可能です。
+        </p>
       </div>
     </div>
   </div>
 
   <div class="service">
-    <div>
+    <div class="service-inner">
       <span class="number">03</span>
       <div>
         <h3>コンクリート打継ぎ工事</h3>
         <small>ラス材工法</small>
-        <p>ラス材を鉄筋の隙間に入れ、型に加工しながらコンクリートを止めます。</p>
+        <p>
+          ラス材（メッキ製、ステンレス製等）の金網を使用し、鉄筋の隙間に入れて、
+          型に加工しながらコンクリートを止めます。
+          コンクリート打設後、ラス材はそのまま埋め込まれます。
+        </p>
       </div>
     </div>
   </div>
 
   <div class="service">
-    <div>
+    <div class="service-inner">
       <span class="number">04</span>
       <div>
         <h3>鍛冶工事</h3>
-        <p>鉄筋・金物などの加工、溶接、切断、組立を行います。</p>
+        <p>
+          鉄筋・金物などの加工、溶接、切断、組立などを行います。
+          現場や用途に応じた高精度な加工を提供し、建築現場を支えます。
+        </p>
       </div>
     </div>
   </div>
@@ -423,9 +505,21 @@ img{max-width:100%}
   </div>
 
   <div class="work">
+    <strong>2025年</strong>
+    <span>パークシティ中野 ザ・タワー エアーズ</span>
+    <small>東急建設</small>
+  </div>
+
+  <div class="work">
     <strong>2026年</strong>
     <span>みなとみらい52街区</span>
     <small>フジタ・大和ハウス工業 JV</small>
+  </div>
+
+  <div class="work">
+    <strong>2026年</strong>
+    <span>横須賀武山教育施設整備工事</span>
+    <small>株式会社 五洋建設</small>
   </div>
 </section>
 
@@ -442,31 +536,47 @@ img{max-width:100%}
       <div><dt>設立</dt><dd>2022年7月</dd></div>
       <div><dt>資本金</dt><dd>100万円</dd></div>
       <div><dt>従業員数</dt><dd>15名</dd></div>
+      <div><dt>協力会社</dt><dd>5社</dd></div>
+      <div><dt>総作業員数</dt><dd>約40名</dd></div>
       <div><dt>対応エリア</dt><dd>首都圏全域</dd></div>
     </dl>
 
     <div class="panel">
       <div class="eyebrow">TOYA SOUGYO</div>
       <h3>品質・安全・信頼。</h3>
-      <p>コンクリート打設を支える専門技術で、現場の品質向上に貢献します。</p>
+      <p>
+        私たちは、コンクリート打設を支える専門技術で、
+        現場の品質向上に貢献します。
+      </p>
       <strong>STRONG STRUCTURES.<br>BUILDING THE FUTURE.</strong>
+
+      <div class="about-facts">
+        <span>年間大型現場5〜6件を施工</span>
+        <span>無事故・無災害を徹底した作業</span>
+      </div>
     </div>
   </div>
 
   <div class="history">
     <h3>代表者経歴</h3>
     <p><strong>2007年 3月</strong> 建設会社入社</p>
-    <p><strong>2019年 1月</strong> 戸谷総業開業</p>
-    <p><strong>2022年 7月</strong> 株式会社戸谷総業設立</p>
+    <p><strong>2019年 1月</strong> 戸谷総業開業（当時3名での開業）</p>
+    <p><strong>2022年 7月</strong> 株式会社 戸谷総業設立</p>
     <p><strong>2024年 2月</strong> 東京都建設業許可証取得</p>
   </div>
 </section>
 
-<section class="section contact">
+<section id="contact" class="section contact">
   <div class="eyebrow">CONTACT</div>
   <h2>現場の品質を、<br><em>ともにつくる。</em></h2>
   <p>工事のご相談、お見積もりを承ります。</p>
-  <a class="button" href="tel:03-6684-4401">電話で相談する　→</a>
+
+  <div class="contact-links">
+    <a class="contact-link primary" href="tel:03-6684-4401">TEL / FAX　03-6684-4401</a>
+    <a class="contact-link" href="mailto:toyasougyo_20220712@outlook.jp">E-mail</a>
+  </div>
+
+  <p class="social-note">LINE・Instagramでも情報を発信しています。</p>
 </section>
 
 <footer class="footer">
@@ -476,7 +586,8 @@ img{max-width:100%}
   </div>
   <div>
     〒140-0004 東京都品川区南品川1-7-7<br>
-    TEL / FAX　03-6684-4401
+    TEL / FAX　03-6684-4401<br>
+    E-mail　toyasougyo_20220712@outlook.jp
   </div>
 </footer>
 
