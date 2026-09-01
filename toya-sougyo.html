@@ -582,10 +582,66 @@ img{max-width:100%}
   }
 }
 
+
+/* A-D coordinated color themes */
+body.theme-a{
+  --navy:#10243f;
+  --ink:#1b3854;
+}
+body.theme-b{
+  --navy:#2b5d87;
+  --ink:#315f82;
+}
+body.theme-c{
+  --navy:#5d829f;
+  --ink:#55758e;
+}
+body.theme-d{
+  --navy:#8aa2b5;
+  --ink:#6f8799;
+}
+
+/* Header contact button follows the selected theme */
+body.theme-a .header-contact{
+  background:#d7a55d;
+  color:#10243f;
+}
+body.theme-b .header-contact{
+  background:#e0b873;
+  color:#214b70;
+}
+body.theme-c .header-contact{
+  background:#ead09e;
+  color:#456b88;
+}
+body.theme-d .header-contact{
+  background:#fff;
+  color:#607f97;
+  border:1px solid #aabac7;
+}
+
+/* Large section titles, Japanese section titles and rules follow theme */
+body .heading b,
+body .heading h2,
+body .contact-row>span,
+body .sns-qr-item strong,
+body .work strong{
+  transition:color .2s,border-color .2s;
+}
+body .heading{
+  transition:border-color .2s;
+}
+
+/* ABOUT has a colored background, so preserve white headings for readability */
+body .about .heading b,
+body .about .heading h2{
+  color:#fff;
+}
+
 </style>
 </head>
 
-<body>
+<body class="theme-a">
 
 <header class="site-header header-a">
   <a class="site-brand" href="#" aria-label="株式会社戸谷総業 トップへ">
@@ -849,11 +905,17 @@ img{max-width:100%}
   const header = document.querySelector('.site-header');
   const logo = document.querySelector('.site-brand img');
   const buttons = document.querySelectorAll('.header-color-checker button');
+
   buttons.forEach(btn => btn.addEventListener('click', function(){
     const key = this.dataset.header;
+
     header.classList.remove('header-a','header-b','header-c','header-d');
     header.classList.add('header-' + key);
     logo.src = 'toya-logo-header-' + key + '.png';
+
+    document.body.classList.remove('theme-a','theme-b','theme-c','theme-d');
+    document.body.classList.add('theme-' + key);
+
     buttons.forEach(b => b.classList.remove('active'));
     this.classList.add('active');
   }));
