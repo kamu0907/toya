@@ -1,157 +1,353 @@
 <!doctype html>
 <html lang="ja">
-
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>株式会社戸谷総業｜ラス型枠工事・鍛冶工事</title>
-    <link rel="stylesheet" href="toya-sougyo.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>株式会社戸谷総業｜ラス型枠工事・鍛冶工事</title>
+<meta name="description" content="株式会社戸谷総業。ラス型枠工事・コンクリート打継ぎ工事・鍛冶工事。首都圏全域に対応します。">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="toya-logo-mark.png">
+<link rel="apple-touch-icon" href="toya-logo-mark.png">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;800&family=Noto+Serif+JP:wght@500;700&display=swap');
+
+:root{
+  --navy:#07132f;
+  --gold:#d7a55d;
+  --ink:#152d4d;
+  --line:#d7dce3;
+  --paper:#f7f8fa;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font-family:'Noto Sans JP',sans-serif}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  min-height:82px;
+  padding:0 4vw;
+  background:var(--navy);
+  color:#fff;
+  display:flex;
+  align-items:center;
+  gap:34px;
+  border-bottom:1px solid rgba(255,255,255,.10);
+}
+.site-brand{
+  display:flex;
+  align-items:center;
+  margin-right:auto;
+  line-height:0;
+}
+.site-brand img{
+  display:block;
+  width:300px;
+  max-width:30vw;
+  height:auto;
+}
+.site-nav{
+  display:flex;
+  align-items:center;
+  gap:32px;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+.site-nav a{transition:opacity .2s}
+.site-nav a:hover{opacity:.65}
+.header-contact{
+  background:var(--gold);
+  color:var(--navy);
+  padding:16px 23px;
+  font-size:13px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.hero-image-only{
+  width:100%;
+  background:var(--navy);
+  line-height:0;
+  overflow:hidden;
+}
+.hero-image-only img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+
+.button{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--navy);
+  padding:17px 25px;
+  margin-top:22px;
+  font-size:12px;
+  letter-spacing:.1em;
+}
+.eyebrow{
+  color:var(--gold);
+  font-size:11px;
+  letter-spacing:.25em;
+  font-weight:700;
+}
+.section{
+  max-width:1160px;
+  margin:auto;
+  padding:100px 5vw;
+}
+.heading{
+  display:flex;
+  align-items:baseline;
+  gap:25px;
+  border-bottom:1px solid var(--ink);
+  padding-bottom:16px;
+}
+.heading b{
+  font-size:clamp(42px,6vw,76px);
+  color:var(--navy);
+  letter-spacing:-.05em;
+}
+.heading h2{
+  font:500 26px 'Noto Serif JP',serif;
+  margin:0;
+}
+.intro{
+  font:20px 'Noto Serif JP',serif;
+  margin:22px 0 45px;
+}
+.service{
+  padding:28px 0;
+  border-bottom:1px solid var(--line);
+}
+.service>div{
+  display:grid;
+  grid-template-columns:84px 1fr;
+  gap:25px;
+}
+.number{
+  background:var(--navy);
+  color:#fff;
+  width:68px;
+  height:68px;
+  display:grid;
+  place-items:center;
+  font-size:23px;
+  font-weight:700;
+}
+.service h3{
+  font:500 25px 'Noto Serif JP',serif;
+  margin:0 0 8px;
+}
+.service small{color:var(--gold);font-weight:700}
+.service p{line-height:1.9;color:#53657a;font-size:14px}
+
+.dark{
+  background:var(--navy);
+  color:#fff;
+  max-width:none;
+  padding:100px max(7vw, calc((100% - 1060px)/2));
+}
+.dark .heading{border-color:#ffffff66}
+.dark .heading b,.dark .heading h2{color:#fff}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  margin-top:45px;
+}
+.strength{
+  padding:28px;
+  border:1px solid #ffffff44;
+}
+.strength i{
+  color:var(--gold);
+  font-style:normal;
+  font-size:12px;
+}
+.strength p{
+  font:500 16px/1.7 'Noto Serif JP',serif;
+}
+
+.work{
+  display:grid;
+  grid-template-columns:95px 1fr 1fr;
+  gap:18px;
+  padding:19px 0;
+  border-bottom:1px solid var(--line);
+}
+.work small{color:#65758a}
+
+.about{
+  background:var(--navy);
+  color:#fff;
+  max-width:none;
+  padding:100px max(7vw, calc((100% - 1060px)/2));
+}
+.about .heading{border-color:#ffffff66}
+.about .heading b,.about .heading h2{color:#fff}
+.about-layout{
+  display:grid;
+  grid-template-columns:1fr .8fr;
+  gap:65px;
+  margin-top:45px;
+}
+.info div{
+  display:grid;
+  grid-template-columns:140px 1fr;
+  padding:17px 0;
+  border-bottom:1px solid #ffffff4d;
+}
+.info dt{color:var(--gold)}
+.info dd{margin:0}
+.panel{
+  border:1px solid #ffffff66;
+  padding:45px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.panel h3{font:500 38px 'Noto Serif JP',serif}
+.panel p{line-height:2;color:#d9e1ec}
+.panel strong{color:var(--gold);font-size:12px;letter-spacing:.13em}
+.history{margin-top:65px}
+.history p{padding:15px 0;border-bottom:1px dashed #ffffff55}
+.history strong{display:inline-block;width:180px;color:var(--gold)}
+
+.contact{text-align:center;background:var(--paper)}
+.contact h2{font:500 clamp(38px,5vw,64px)/1.3 'Noto Serif JP',serif}
+.contact em{color:var(--gold);font-style:normal}
+.footer{
+  background:#040b20;
+  color:#fff;
+  padding:45px 8vw;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:12px;
+}
+.footer small{color:#8995a8}
+
+@media(max-width:900px){
+  .site-header{min-height:68px;padding:0 5vw}
+  .site-brand img{width:230px;max-width:48vw}
+  .site-nav{display:none}
+  .header-contact{padding:12px 15px;font-size:11px}
+}
+@media(max-width:720px){
+  .section,.dark,.about{padding:75px 7vw}
+  .heading{gap:14px;align-items:center}
+  .heading b{font-size:42px}
+  .heading h2{font-size:19px}
+  .service>div{grid-template-columns:60px 1fr;gap:15px}
+  .number{width:54px;height:54px;font-size:18px}
+  .service h3{font-size:20px}
+  .grid,.about-layout{grid-template-columns:1fr;gap:0}
+  .strength{padding:22px 18px}
+  .work{grid-template-columns:70px 1fr;gap:5px 12px;font-size:13px}
+  .work small{grid-column:2}
+  .panel{padding:32px 24px;margin-top:25px}
+  .panel h3{font-size:29px}
+  .history strong{width:125px}
+  .footer{display:block;padding:35px 7vw}
+}
+@media(max-width:520px){
+  .site-brand img{width:190px;max-width:52vw}
+  .header-contact{padding:10px 11px}
+}
+</style>
 </head>
 
 <body>
-    <header class="site-header">
-        <a class="site-brand" href="#">
-            <span><strong>株式会社 戸谷総業</strong><small>TOYA SOUGYO CO., LTD.</small></span>
-        </a>
-        <nav class="site-nav">
-            <a href="#business">事業内容</a>
-            <a href="#strength">私たちの強み</a>
-            <a href="#works">施工実績</a>
-            <a href="#about">会社概要</a>
-        </nav>
-        <a class="header-contact" href="tel:03-6684-4401">お問い合わせ</a>
-    </header>
-    <section class="hero hero-image-only">
-        <img src="toya-hero.png" alt="株式会社戸谷総業 ラス工事のトータルパートナー">
-    </section>
-    <section id="business" class="section">
-        <div class="heading"><b>BUSINESS</b>
-            <h2>事業内容</h2>
-        </div>
-        <p class="intro">コンクリート打設を支える、見えない構造の専門家。</p>
-        <div class="service">
-            <div><span class="number">01</span>
-                <div>
-                    <h3>ラス型枠工事</h3>
-                    <p>特殊な金網（ラス材）を鉄筋の隙間に設置し、コンクリート打継部を形成します。</p>
-                </div>
-            </div>
-        </div>
-        <div class="service">
-            <div><span class="number">02</span>
-                <div>
-                    <h3>コンクリート打継ぎ工事</h3><small>エアーフェンス工法</small>
-                    <p>ゴム製のエアーフェンスでコンクリートを止め、打設後に引き抜きます。</p>
-                </div>
-            </div>
-        </div>
-        <div class="service">
-            <div><span class="number">03</span>
-                <div>
-                    <h3>コンクリート打継ぎ工事</h3><small>ラス材工法</small>
-                    <p>ラス材を鉄筋の隙間に入れ、型に加工しながらコンクリートを止めます。</p>
-                </div>
-            </div>
-        </div>
-        <div class="service">
-            <div><span class="number">04</span>
-                <div>
-                    <h3>鍛冶工事</h3>
-                    <p>鉄筋・金物などの加工、溶接、切断、組立を行います。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="strength" class="dark">
-        <div class="heading"><b>STRENGTH</b>
-            <h2>私たちの強み</h2>
-        </div>
-        <div class="grid">
-            <div class="strength"><i>01</i>
-                <p>工程を遵守し、確実な施工を実現</p>
-            </div>
-            <div class="strength"><i>02</i>
-                <p>年間大型現場5〜6件を施工</p>
-            </div>
-            <div class="strength"><i>03</i>
-                <p>チームワークのよさで高品質を提供</p>
-            </div>
-            <div class="strength"><i>04</i>
-                <p>総作業員約40名体制で対応</p>
-            </div>
-            <div class="strength"><i>05</i>
-                <p>無事故・無災害を徹底</p>
-            </div>
-            <div class="strength"><i>06</i>
-                <p>首都圏全域に対応可能</p>
-            </div>
-        </div>
-    </section>
-    <section id="works" class="section">
-        <div class="heading"><b>WORKS</b>
-            <h2>施工実績</h2>
-        </div>
-        <p class="intro">信頼と実績が、次の現場へつながっていく。</p>
-        <div class="work"><strong>2009年</strong><span>アークヒルズ仙石山レジデンス</span><small>大林組</small></div>
-        <div class="work"><strong>2012年</strong><span>大手町フィナンシャルシティグランキューブ</span><small>株式会社 戸田建設</small></div>
-        <div class="work"><strong>2016年</strong><span>パークシティ大崎 ザ タワー</span><small>株式会社 西松建設</small></div>
-        <div class="work"><strong>2023年</strong><span>麻布台ヒルズ レジデンス B</span><small>株式会社 三井住友建設</small></div>
-        <div class="work"><strong>2026年</strong><span>みなとみらい52街区</span><small>フジタ・大和ハウス工業 JV</small></div>
-    </section>
-    <section id="about" class="about">
-        <div class="heading"><b>ABOUT US</b>
-            <h2>会社概要</h2>
-        </div>
-        <div class="about-layout">
-            <dl class="info">
-                <div>
-                    <dt>会社名</dt>
-                    <dd>株式会社戸谷総業</dd>
-                </div>
-                <div>
-                    <dt>代表取締役</dt>
-                    <dd>戸谷 亮</dd>
-                </div>
-                <div>
-                    <dt>設立</dt>
-                    <dd>2022年7月</dd>
-                </div>
-                <div>
-                    <dt>資本金</dt>
-                    <dd>100万円</dd>
-                </div>
-                <div>
-                    <dt>従業員数</dt>
-                    <dd>15名</dd>
-                </div>
-                <div>
-                    <dt>対応エリア</dt>
-                    <dd>首都圏全域</dd>
-                </div>
-            </dl>
-            <div class="panel">
-                <div class="eyebrow">TOYA SOUGYO</div>
-                <h3>品質・安全・信頼。</h3>
-                <p>コンクリート打設を支える専門技術で、現場の品質向上に貢献します。</p><strong>STRONG STRUCTURES.<br>BUILDING THE FUTURE.</strong>
-            </div>
-        </div>
-        <div class="history">
-            <h3>代表者経歴</h3>
-            <p><strong>2007年 3月</strong> 建設会社入社</p>
-            <p><strong>2019年 1月</strong> 戸谷総業開業</p>
-            <p><strong>2022年 7月</strong> 株式会社戸谷総業設立</p>
-            <p><strong>2024年 2月</strong> 東京都建設業許可証取得</p>
-        </div>
-    </section>
-    <section class="section contact">
-        <div class="eyebrow">CONTACT</div>
-        <h2>現場の品質を、<br><em>ともにつくる。</em></h2>
-        <p>工事のご相談、お見積もりを承ります。</p><a class="button" href="tel:03-6684-4401">電話で相談する　→</a>
-    </section>
-    <footer class="footer">
-        <div>株式会社 戸谷総業<br><small>ラス型枠工事・鍛冶工事</small></div>
-        <div>〒140-0004 東京都品川区南品川1-7-7<br>TEL / FAX　03-6684-4401</div>
-    </footer>
-</body>
+<header class="site-header">
+  <a class="site-brand" href="#" aria-label="株式会社戸谷総業 トップへ">
+    <img src="toya-logo-header.png" alt="株式会社戸谷総業 TOYA SOUGYO CO., LTD.">
+  </a>
+  <nav class="site-nav" aria-label="メインナビゲーション">
+    <a href="#business">事業内容</a>
+    <a href="#strength">私たちの強み</a>
+    <a href="#works">施工実績</a>
+    <a href="#about">会社概要</a>
+  </nav>
+  <a class="header-contact" href="tel:03-6684-4401">お問い合わせ</a>
+</header>
 
+<section class="hero-image-only">
+  <img src="toya-hero-final.jpg" alt="見えないところで、構造を支える。株式会社戸谷総業">
+</section>
+
+<section id="business" class="section">
+  <div class="heading"><b>BUSINESS</b><h2>事業内容</h2></div>
+  <p class="intro">コンクリート打設を支える、見えない構造の専門家。</p>
+
+  <div class="service"><div><span class="number">01</span><div><h3>ラス型枠工事</h3><p>特殊な金網（ラス材）を鉄筋の隙間に設置し、コンクリート打継部を形成します。</p></div></div></div>
+  <div class="service"><div><span class="number">02</span><div><h3>コンクリート打継ぎ工事</h3><small>エアーフェンス工法</small><p>ゴム製のエアーフェンスでコンクリートを止め、打設後に引き抜きます。</p></div></div></div>
+  <div class="service"><div><span class="number">03</span><div><h3>コンクリート打継ぎ工事</h3><small>ラス材工法</small><p>ラス材を鉄筋の隙間に入れ、型に加工しながらコンクリートを止めます。</p></div></div></div>
+  <div class="service"><div><span class="number">04</span><div><h3>鍛冶工事</h3><p>鉄筋・金物などの加工、溶接、切断、組立を行います。</p></div></div></div>
+</section>
+
+<section id="strength" class="dark">
+  <div class="heading"><b>STRENGTH</b><h2>私たちの強み</h2></div>
+  <div class="grid">
+    <div class="strength"><i>01</i><p>工程を遵守し、確実な施工を実現</p></div>
+    <div class="strength"><i>02</i><p>年間大型現場5〜6件を施工</p></div>
+    <div class="strength"><i>03</i><p>チームワークのよさで高品質を提供</p></div>
+    <div class="strength"><i>04</i><p>総作業員約40名体制で対応</p></div>
+    <div class="strength"><i>05</i><p>無事故・無災害を徹底</p></div>
+    <div class="strength"><i>06</i><p>首都圏全域に対応可能</p></div>
+  </div>
+</section>
+
+<section id="works" class="section">
+  <div class="heading"><b>WORKS</b><h2>施工実績</h2></div>
+  <p class="intro">信頼と実績が、次の現場へつながっていく。</p>
+  <div class="work"><strong>2009年</strong><span>アークヒルズ仙石山レジデンス</span><small>大林組</small></div>
+  <div class="work"><strong>2012年</strong><span>大手町フィナンシャルシティグランキューブ</span><small>株式会社 戸田建設</small></div>
+  <div class="work"><strong>2016年</strong><span>パークシティ大崎 ザ タワー</span><small>株式会社 西松建設</small></div>
+  <div class="work"><strong>2023年</strong><span>麻布台ヒルズ レジデンス B</span><small>株式会社 三井住友建設</small></div>
+  <div class="work"><strong>2026年</strong><span>みなとみらい52街区</span><small>フジタ・大和ハウス工業 JV</small></div>
+</section>
+
+<section id="about" class="about">
+  <div class="heading"><b>ABOUT US</b><h2>会社概要</h2></div>
+  <div class="about-layout">
+    <dl class="info">
+      <div><dt>会社名</dt><dd>株式会社戸谷総業</dd></div>
+      <div><dt>代表取締役</dt><dd>戸谷 亮</dd></div>
+      <div><dt>設立</dt><dd>2022年7月</dd></div>
+      <div><dt>資本金</dt><dd>100万円</dd></div>
+      <div><dt>従業員数</dt><dd>15名</dd></div>
+      <div><dt>対応エリア</dt><dd>首都圏全域</dd></div>
+    </dl>
+    <div class="panel">
+      <div class="eyebrow">TOYA SOUGYO</div>
+      <h3>品質・安全・信頼。</h3>
+      <p>コンクリート打設を支える専門技術で、現場の品質向上に貢献します。</p>
+      <strong>STRONG STRUCTURES.<br>BUILDING THE FUTURE.</strong>
+    </div>
+  </div>
+  <div class="history">
+    <h3>代表者経歴</h3>
+    <p><strong>2007年 3月</strong> 建設会社入社</p>
+    <p><strong>2019年 1月</strong> 戸谷総業開業</p>
+    <p><strong>2022年 7月</strong> 株式会社戸谷総業設立</p>
+    <p><strong>2024年 2月</strong> 東京都建設業許可証取得</p>
+  </div>
+</section>
+
+<section class="section contact">
+  <div class="eyebrow">CONTACT</div>
+  <h2>現場の品質を、<br><em>ともにつくる。</em></h2>
+  <p>工事のご相談、お見積もりを承ります。</p>
+  <a class="button" href="tel:03-6684-4401">電話で相談する　→</a>
+</section>
+
+<footer class="footer">
+  <div>株式会社 戸谷総業<br><small>ラス型枠工事・鍛冶工事</small></div>
+  <div>〒140-0004 東京都品川区南品川1-7-7<br>TEL / FAX　03-6684-4401</div>
+</footer>
+</body>
 </html>
