@@ -478,14 +478,62 @@ img{max-width:100%}
     padding:10px 11px;
   }
 }
+
+/* HEADER COLOR CHECKER: comparison only */
+.header-color-checker{
+  position:fixed;
+  right:14px;
+  bottom:14px;
+  z-index:5000;
+  display:flex;
+  gap:6px;
+  padding:8px;
+  background:rgba(255,255,255,.95);
+  border:1px solid #d7dce3;
+  box-shadow:0 4px 18px rgba(0,0,0,.14);
+}
+.header-color-checker button{
+  border:1px solid #cbd5df;
+  background:#fff;
+  color:#152d4d;
+  padding:8px 11px;
+  cursor:pointer;
+  font-weight:700;
+}
+.header-color-checker button.active{outline:2px solid #d7a55d}
+.site-header.header-a{background:#10243f}
+.site-header.header-b{background:#2b5d87}
+.site-header.header-c{background:#5d829f}
+.site-header.header-d{
+  background:#eef2f5;
+  color:#183a61;
+  border-bottom-color:#cbd5df;
+}
+.site-header.header-d .site-nav a{color:#183a61}
+
+/* QR: show the whole source QR image without clipping */
+.sns-qr-item img{
+  width:140px;
+  height:140px;
+  object-fit:contain;
+  object-position:center;
+  padding:6px;
+  background:#fff;
+}
+@media(max-width:720px){
+  .sns-qr-item img{width:125px;height:125px}
+  .header-color-checker{right:8px;bottom:8px}
+  .header-color-checker button{padding:7px 9px}
+}
+
 </style>
 </head>
 
 <body>
 
-<header class="site-header">
+<header class="site-header header-a">
   <a class="site-brand" href="#" aria-label="株式会社戸谷総業 トップへ">
-    <img src="toya-logo-header.png" alt="株式会社戸谷総業 TOYA SOUGYO CO., LTD.">
+    <img src="toya-logo-header-a.png" alt="株式会社戸谷総業 TOYA SOUGYO CO., LTD.">
   </a>
 
   <nav class="site-nav" aria-label="メインナビゲーション">
@@ -732,6 +780,29 @@ img{max-width:100%}
     E-mail　toyasougyo_20220712@outlook.jp
   </div>
 </footer>
+
+
+<div class="header-color-checker" aria-label="ヘッダーカラー比較">
+  <button type="button" class="active" data-header="a" title="A 濃紺・重厚">A</button>
+  <button type="button" data-header="b" title="B 鮮やかなネイビー">B</button>
+  <button type="button" data-header="c" title="C 明るいブルーグレー">C</button>
+  <button type="button" data-header="d" title="D ライトグレー">D</button>
+</div>
+<script>
+(function(){
+  const header = document.querySelector('.site-header');
+  const logo = document.querySelector('.site-brand img');
+  const buttons = document.querySelectorAll('.header-color-checker button');
+  buttons.forEach(btn => btn.addEventListener('click', function(){
+    const key = this.dataset.header;
+    header.classList.remove('header-a','header-b','header-c','header-d');
+    header.classList.add('header-' + key);
+    logo.src = 'toya-logo-header-' + key + '.png';
+    buttons.forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+  }));
+})();
+</script>
 
 </body>
 </html>
