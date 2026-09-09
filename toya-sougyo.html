@@ -11,9 +11,9 @@
 
 <style>
 :root{
-  --navy:#315d82;
-  --gold:#d7a55d;
-  --ink:#274968;
+  --navy:#5d829f;
+  --gold:#ead09e;
+  --ink:#55758e;
   --line:#d7dce3;
   --paper:#f7f8fa;
 }
@@ -65,8 +65,8 @@ img{max-width:100%}
 .site-nav a{transition:opacity .2s}
 .site-nav a:hover{opacity:.65}
 .header-contact{
-  background:var(--gold);
-  color:var(--navy);
+  background:#ead09e;
+  color:#456b88;
   padding:16px 23px;
   font-size:13px;
   font-weight:700;
@@ -386,7 +386,7 @@ img{max-width:100%}
 
 /* FOOTER */
 .footer{
-  background:#102d4e;
+  background:#456b88;
   color:#fff;
   padding:45px 8vw;
   display:flex;
@@ -479,37 +479,6 @@ img{max-width:100%}
   }
 }
 
-/* HEADER COLOR CHECKER: comparison only */
-.header-color-checker{
-  position:fixed;
-  right:14px;
-  bottom:14px;
-  z-index:5000;
-  display:flex;
-  gap:6px;
-  padding:8px;
-  background:rgba(255,255,255,.95);
-  border:1px solid #d7dce3;
-  box-shadow:0 4px 18px rgba(0,0,0,.14);
-}
-.header-color-checker button{
-  border:1px solid #cbd5df;
-  background:#fff;
-  color:#152d4d;
-  padding:8px 11px;
-  cursor:pointer;
-  font-weight:700;
-}
-.header-color-checker button.active{outline:2px solid #d7a55d}
-.site-header.header-a{background:#10243f}
-.site-header.header-b{background:#2b5d87}
-.site-header.header-c{background:#5d829f}
-.site-header.header-d{
-  background:#eef2f5;
-  color:#183a61;
-  border-bottom-color:#cbd5df;
-}
-.site-header.header-d .site-nav a{color:#183a61}
 
 /* QR: show the whole source QR image without clipping */
 .sns-qr-item img{
@@ -522,8 +491,6 @@ img{max-width:100%}
 }
 @media(max-width:720px){
   .sns-qr-item img{width:125px;height:125px}
-  .header-color-checker{right:8px;bottom:8px}
-  .header-color-checker button{padding:7px 9px}
 }
 
 
@@ -582,70 +549,14 @@ img{max-width:100%}
   }
 }
 
-
-/* A-D coordinated color themes */
-body.theme-a{
-  --navy:#10243f;
-  --ink:#1b3854;
-}
-body.theme-b{
-  --navy:#2b5d87;
-  --ink:#315f82;
-}
-body.theme-c{
-  --navy:#5d829f;
-  --ink:#55758e;
-}
-body.theme-d{
-  --navy:#8aa2b5;
-  --ink:#6f8799;
-}
-
-/* Header contact button follows the selected theme */
-body.theme-a .header-contact{
-  background:#d7a55d;
-  color:#10243f;
-}
-body.theme-b .header-contact{
-  background:#e0b873;
-  color:#214b70;
-}
-body.theme-c .header-contact{
-  background:#ead09e;
-  color:#456b88;
-}
-body.theme-d .header-contact{
-  background:#fff;
-  color:#607f97;
-  border:1px solid #aabac7;
-}
-
-/* Large section titles, Japanese section titles and rules follow theme */
-body .heading b,
-body .heading h2,
-body .contact-row>span,
-body .sns-qr-item strong,
-body .work strong{
-  transition:color .2s,border-color .2s;
-}
-body .heading{
-  transition:border-color .2s;
-}
-
-/* ABOUT has a colored background, so preserve white headings for readability */
-body .about .heading b,
-body .about .heading h2{
-  color:#fff;
-}
-
 </style>
 </head>
 
-<body class="theme-a">
+<body>
 
-<header class="site-header header-a">
+<header class="site-header">
   <a class="site-brand" href="#" aria-label="株式会社戸谷総業 トップへ">
-    <img src="toya-logo-header-a.png" alt="株式会社戸谷総業 TOYA SOUGYO CO., LTD.">
+    <img src="toya-logo-header-c.png" alt="株式会社戸谷総業 TOYA SOUGYO CO., LTD.">
   </a>
 
   <nav class="site-nav" aria-label="メインナビゲーション">
@@ -894,33 +805,6 @@ body .about .heading h2{
 </footer>
 
 
-<div class="header-color-checker" aria-label="ヘッダーカラー比較">
-  <button type="button" class="active" data-header="a" title="A 濃紺・重厚">A</button>
-  <button type="button" data-header="b" title="B 鮮やかなネイビー">B</button>
-  <button type="button" data-header="c" title="C 明るいブルーグレー">C</button>
-  <button type="button" data-header="d" title="D ライトグレー">D</button>
-</div>
-<script>
-(function(){
-  const header = document.querySelector('.site-header');
-  const logo = document.querySelector('.site-brand img');
-  const buttons = document.querySelectorAll('.header-color-checker button');
-
-  buttons.forEach(btn => btn.addEventListener('click', function(){
-    const key = this.dataset.header;
-
-    header.classList.remove('header-a','header-b','header-c','header-d');
-    header.classList.add('header-' + key);
-    logo.src = 'toya-logo-header-' + key + '.png';
-
-    document.body.classList.remove('theme-a','theme-b','theme-c','theme-d');
-    document.body.classList.add('theme-' + key);
-
-    buttons.forEach(b => b.classList.remove('active'));
-    this.classList.add('active');
-  }));
-})();
-</script>
 
 </body>
 </html>
