@@ -549,6 +549,47 @@ img{max-width:100%}
   }
 }
 
+
+/* CONTACT SNS links */
+.sns-link-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  align-items:stretch;
+}
+.sns-link{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:220px;
+  padding:14px 16px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:8px;
+  transition:opacity .2s,border-color .2s;
+}
+.sns-link:hover{opacity:.8;border-color:var(--navy)}
+.sns-icon{
+  flex:0 0 40px;
+  width:40px;
+  height:40px;
+  display:grid;
+  place-items:center;
+  border-radius:9px;
+  color:#fff;
+}
+.sns-icon svg{display:block;width:25px;height:25px}
+.sns-line .sns-icon{background:#06c755}
+.sns-instagram .sns-icon{background:linear-gradient(135deg,#833ab4,#e1306c,#f77737)}
+.sns-link-text{display:flex;flex-direction:column;gap:4px}
+.sns-link-text strong{color:var(--navy);font-size:14px}
+.sns-link-text small{color:#53657a;font-size:12px}
+.sns-arrow{margin-left:auto;color:var(--navy);font-size:17px}
+@media(max-width:720px){
+  .sns-link-list{gap:12px}
+  .sns-link{min-width:0;width:100%}
+}
+
 </style>
 </head>
 
@@ -778,15 +819,21 @@ img{max-width:100%}
     </div>
     <div class="contact-row contact-social">
       <span>SNS</span>
-      <div class="sns-qr-list">
-        <div class="sns-qr-item">
-          <img src="line-qr.png" alt="LINE QRコード">
-          <strong>LINE</strong>
-        </div>
-        <div class="sns-qr-item">
-          <img src="instagram-qr.png" alt="Instagram QRコード">
-          <strong>Instagram</strong>
-        </div>
+      <div class="sns-link-list">
+        <a class="sns-link sns-line" href="https://line.me/R/ti/p/ggXC8K4LCZ" target="_blank" rel="noopener noreferrer" aria-label="LINEで友だち追加">
+          <span class="sns-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 5.58 2 10c0 3.956 3.57 7.254 8.39 7.89.327.07.77.213.882.49.1.251.066.644.032.898l-.143.854c-.044.251-.2.981.86.535 1.061-.446 5.76-3.392 7.86-5.807C21.31 13.29 22 11.74 22 10c0-4.42-4.477-8-10-8zm-4.1 10.57H5.92a.53.53 0 0 1-.53-.53V8.38a.53.53 0 0 1 1.06 0v3.13H7.9a.53.53 0 1 1 0 1.06zm1.64-.53a.53.53 0 0 1-1.06 0V8.38a.53.53 0 0 1 1.06 0zm4.4 0a.53.53 0 0 1-.94.33l-1.91-2.6v2.27a.53.53 0 0 1-1.06 0V8.38a.53.53 0 0 1 .94-.33l1.91 2.6V8.38a.53.53 0 0 1 1.06 0zm3.2-1.83a.53.53 0 0 1 0 1.06h-1.45v.24h1.45a.53.53 0 0 1 0 1.06h-1.98a.53.53 0 0 1-.53-.53V8.38c0-.293.237-.53.53-.53h1.98a.53.53 0 0 1 0 1.06h-1.45v.77h1.45a.53.53 0 0 1 0 1.06h-1.45v.47z"/></svg>
+          </span>
+          <span class="sns-link-text"><strong>LINE</strong><small>友だち追加</small></span>
+          <span class="sns-arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="sns-link sns-instagram" href="https://www.instagram.com/toyasougyu_0712/" target="_blank" rel="noopener noreferrer" aria-label="Instagramを見る">
+          <span class="sns-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.5-2.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/></svg>
+          </span>
+          <span class="sns-link-text"><strong>Instagram</strong><small>Instagramを見る</small></span>
+          <span class="sns-arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
     </div>
   </div>
